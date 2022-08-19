@@ -1,10 +1,10 @@
 import fetch from 'node-fetch'
 import { schedule } from '@netlify/functions'
 
-const buildAction = async function () {
-  const BUILD_HOOK =
-    'https://api.netlify.com/build_hooks/62fefde419ae1d2c11e30a2d'
+const BUILD_HOOK =
+  'https://api.netlify.com/build_hooks/62fefde419ae1d2c11e30a2d'
 
+const handler = schedule('* * * * *', async () => {
   await fetch(BUILD_HOOK, {
     method: 'POST'
   }).then(response => {
@@ -14,8 +14,6 @@ const buildAction = async function () {
   return {
     statusCode: 200
   }
-}
-
-const handler = schedule('* * * * *', buildAction)
+})
 
 export { handler }
