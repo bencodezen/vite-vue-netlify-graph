@@ -8,7 +8,7 @@ const buildAction = async function () {
   await fetch(BUILD_HOOK, {
     method: 'POST'
   }).then(response => {
-    console.log('Build hook response:', response.json())
+    console.log('Build hook response:', response)
   })
 
   return {
