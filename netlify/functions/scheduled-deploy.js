@@ -1,10 +1,10 @@
 import fetch from 'node-fetch'
 import { schedule } from '@netlify/functions'
 
-const BUILD_HOOK =
-  'https://api.netlify.com/build_hooks/62fefde419ae1d2c11e30a2d'
-
 const buildAction = async function () {
+  const BUILD_HOOK =
+    'https://api.netlify.com/build_hooks/62fefde419ae1d2c11e30a2d'
+
   await fetch(BUILD_HOOK, {
     method: 'POST'
   }).then(response => {
