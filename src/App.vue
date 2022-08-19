@@ -2,6 +2,14 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
+
+const triggerBuild = () => {
+  fetch('/.netlify/functions/scheduled-deploy', {
+    method: 'GET'
+  }).then(data => {
+    console.log(data)
+  })
+}
 </script>
 
 <template>
@@ -13,6 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <button @click="triggerBuild">Trigger Build</button>
   <HelloWorld msg="Vite + Vue" />
 </template>
 

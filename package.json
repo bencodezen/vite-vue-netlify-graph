@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@netlify/functions": "^1.2.0",
+    "node-fetch": "^3.2.10",
     "vue": "^3.2.37"
   },
   "devDependencies": {
