@@ -16,6 +16,6 @@ const buildAction = async function () {
   }
 }
 
-const handler = schedule('55 * * * *', buildAction)
+const handler = schedule('* * * * *', buildAction)
 
 export { handler }
